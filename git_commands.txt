@@ -1,0 +1,172 @@
+
+KANCHI@LAPTOP-5581264I MINGW64 ~
+$ mkdir NewPart
+mkdir: cannot create directory ‘NewPart’: File exists
+
+KANCHI@LAPTOP-5581264I MINGW64 ~
+$ mkdir Part
+
+KANCHI@LAPTOP-5581264I MINGW64 ~
+$ cd Part
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part
+$ git init
+Initialized empty Git repository in C:/Users/KANCHI/Part/.git/
+to
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ touch t2.txt
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git remote add origin "https://github.com/kanchis27/efgh.git"
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git commit -m "First_Commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        t2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git commit -m "First_Commit"
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        t2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git add .
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git commit -m "First_Commit"
+[master (root-commit) 5096947] First_Commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 t2.txt
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git commit -m "First_Commit"
+On branch master
+nothing to commit, working tree clean
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git add .
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git push -u origin master
+
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 211 bytes | 211.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/kanchis27/efgh.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git branch develop
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git checkout develop
+Switched to branch 'develop'
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git status
+On branch develop
+nothing to commit, working tree clean
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ touch t3.txt
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git add .
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git status
+On branch develop
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   t3.txt
+
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git commit -m "Second_Commit"
+[develop b249bc3] Second_Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 t3.txt
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git push -u origin develop
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 284 bytes | 284.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/kanchis27/efgh/pull/new/develop
+remote:
+To https://github.com/kanchis27/efgh.git
+ * [new branch]      develop -> develop
+branch 'develop' set up to track 'origin/develop'.
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git commit -m "Second_Commit"
+On branch develop
+Your branch is up to date with 'origin/develop'.
+
+nothing to commit, working tree clean
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git push origin develop
+Everything up-to-date
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (develop)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git merge develop
+Updating 5096947..b249bc3
+Fast-forward
+ t3.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 t3.txt
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git log
+commit b249bc3ed0b46e582452200818b9130b73a74a04 (HEAD -> master, origin/develop, develop)
+Author: kanchis27 <kanchisonkule@gmail.com>
+Date:   Fri May 10 23:35:41 2024 +0530
+
+    Second_Commit
+
+commit 5096947b97b3dc469682dafdcaf3e03cf176f304 (origin/master)
+Author: kanchis27 <kanchisonkule@gmail.com>
+Date:   Fri May 10 23:27:31 2024 +0530
+
+    First_Commit
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ git push origin master
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/kanchis27/efgh.git
+   5096947..b249bc3  master -> master
+
+KANCHI@LAPTOP-5581264I MINGW64 ~/Part (master)
+$ ^C
